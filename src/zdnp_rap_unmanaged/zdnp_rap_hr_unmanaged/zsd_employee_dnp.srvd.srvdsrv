@@ -1,0 +1,5 @@
+@EndUserText.label: 'Employee'
+define service ZSD_EMPLOYEE_DNP
+  provider contracts odata_v4_ui {
+  expose ZC_EMPLOYEE_DNP as EmployeeTp;
+}

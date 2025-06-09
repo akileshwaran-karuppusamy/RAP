@@ -1,0 +1,42 @@
+unmanaged implementation in class zbp_r_employee_dnp unique;
+strict ( 2 );
+
+define behavior for ZR_EMPLOYEE_DNP alias Employee
+lock master
+authorization master ( global )
+{
+  internal create;
+  internal update;
+  internal delete;
+
+  field ( mandatory : create, readonly : update ) EmployeeNo;
+
+  static factory action hire deep parameter ZD_EMPLOYEE_HIRE_DNP [1];
+
+  association _Action { internal create; }
+  association _Personal { internal create; }
+}
+
+define behavior for ZR_ACTION_DNP alias Action
+lock dependent by _Employee
+authorization dependent by _Employee
+{
+  internal update;
+  internal delete;
+
+  field ( mandatory : create, readonly : update ) EmployeeNo, Subtype, BeginDate, EndDate;
+
+  association _Employee;
+}
+
+define behavior for ZR_PERSONAL_DNP alias Personal
+lock dependent by _Employee
+authorization dependent by _Employee
+{
+  internal update;
+  internal delete;
+
+  field ( mandatory : create, readonly : update ) EmployeeNo, Subtype, BeginDate, EndDate;
+
+  association _Employee;
+}

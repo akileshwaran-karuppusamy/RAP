@@ -1,0 +1,9 @@
+abstract;
+strict ( 2 );
+with hierarchy;
+
+define behavior for ZD_EMPLOYEE_HIRE_DNP alias EmployeeHire
+with control
+{
+  field ( mandatory : execute ) DateOfBirth, EmployeeNo, FirstName, LastName;
+}

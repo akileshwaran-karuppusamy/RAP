@@ -1,0 +1,5 @@
+CLASS zbp_r_employee_dnp DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zr_employee_dnp.
+ENDCLASS.
+
+CLASS zbp_r_employee_dnp IMPLEMENTATION.
+ENDCLASS.

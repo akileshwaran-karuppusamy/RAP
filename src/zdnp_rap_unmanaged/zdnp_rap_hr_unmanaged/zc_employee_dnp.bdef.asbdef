@@ -1,0 +1,7 @@
+projection;
+strict ( 2 );
+
+define behavior for ZC_EMPLOYEE_DNP alias EmployeeTp
+{
+  use action hire;
+}

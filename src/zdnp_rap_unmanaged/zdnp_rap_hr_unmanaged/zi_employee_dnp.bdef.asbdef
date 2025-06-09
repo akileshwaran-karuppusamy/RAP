@@ -1,0 +1,6 @@
+interface;
+
+define behavior for ZI_EMPLOYEE_DNP alias Employee
+{
+  use action hire;
+}
